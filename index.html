@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <title>Ashwath Nakate - Portfolio</title>
     <style>
         * {
@@ -33,17 +34,11 @@
             left: 50%;
             transform: translateX(-50%);
             width: 60%;
-            /* Keeps it centered with some spacing on sides */
             background: rgba(255, 255, 255, 0.1);
-            /* Transparent white */
             backdrop-filter: blur(10px);
-            /* Frosted glass effect */
             -webkit-backdrop-filter: blur(10px);
-            /* Safari support */
             border-radius: 15px;
-            /* Rounded edges */
             border: 1px solid rgba(255, 255, 255, 0.2);
-            /* Subtle glass border */
             z-index: 1000;
             padding: 15px 20px;
         }
@@ -76,6 +71,16 @@
 
         .nav-links a:hover {
             color: #00bfff;
+        }
+
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
         }
 
         /* Hero Section with Grid Background */
@@ -155,6 +160,8 @@
             border-radius: 18px;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
+            margin-right: 10px;
         }
 
         .view-project-btn:hover {
@@ -169,9 +176,9 @@
             border: 2px solid #00bfff;
             padding: 12px 24px;
             border-radius: 18px;
-            text-decoration: none;
             transition: all 0.3s ease;
             background-color: #161616;
+            display: inline-block;
         }
 
         .contact-btn:hover {
@@ -230,7 +237,7 @@
             font-size: 14px;
         }
 
-        /* Technical Skills Section (replacing Services) */
+        /* Technical Skills Section */
         .services {
             display: flex;
             align-items: center;
@@ -283,6 +290,7 @@
             color: #ffffff;
             line-height: 1.6;
             margin-bottom: 30px;
+            font-size: 1.2rem;
         }
 
         .section-title {
@@ -291,7 +299,7 @@
             margin-bottom: 60px;
         }
 
-        /*Projects Section*/
+        /* Projects Section */
         .projects {
             display: flex;
             align-items: center;
@@ -304,7 +312,6 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
-
 
         .project-card {
             align-items: flex-start;
@@ -325,7 +332,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
 
         .project-card h3 {
             margin-top: 10px;
@@ -371,13 +377,10 @@
             transition: 0.3s ease;
         }
 
-        .service-link:hover{
+        .service-link:hover {
             color: #027fa8;
             transform: translateY(-5px);
         }
-
-
-
 
         /* Publications */
         .publications {
@@ -390,12 +393,10 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             align-items: stretch;
-            /* makes cards same height */
         }
 
-
         .publication-card {
-            align-items: flex-start;;
+            align-items: flex-start;
             padding: 40px;
             border-radius: 10px;
             border: 1.5px solid #383838;
@@ -404,9 +405,7 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            /* ensure equal height */
             opacity: 0;
-            /* for scroll animation */
             transform: translateY(40px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
@@ -415,7 +414,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
 
         .publication-card h3 {
             font-size: 24px;
@@ -464,13 +462,10 @@
             transition: 0.3s ease;
         }
 
-        .publication-link:hover{
+        .publication-link:hover {
             color: #027fa8;
             transform: translateY(-5px);
         }
-
-
-
 
         /* Contact Section */
         .contact {
@@ -492,6 +487,7 @@
             align-items: center;
             justify-content: center;
             transition: 0.3s ease;
+            flex-wrap: wrap;
         }
 
         .contact-item:hover {
@@ -509,16 +505,12 @@
             justify-content: center;
             align-items: center;
             height: 80px;
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
             background-color: #444;
             font-size: 2.8rem;
             border-radius: 20px;
             text-decoration: none;
-            color: #ffffff;
-        }
-
-        .h4-email {
-            font-size: 1.5rem;
             color: #ffffff;
         }
 
@@ -606,31 +598,343 @@
             color: #777;
         }
 
-
-
         /* Responsive Design */
+
+        /* Large tablets and small desktops */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+
+            header {
+                width: 70%;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Tablets */
         @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .container {
+                padding: 0 20px;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            /* Header adjustments */
+            header {
+                width: 90%;
+                padding: 12px 15px;
             }
 
-            .services-grid,
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
+            .logo {
+                font-size: 20px;
             }
 
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgb(255, 255, 255);
+                border-radius: 15px;
+                margin-top: 10px;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                color: #161616;
+                font-size: 16px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Hero section */
+            .hero {
+                padding-top: 100px;
+                min-height: 90vh;
+            }
+
+            .hero-text h2 {
+                font-size: 16px;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            .h-btns {
+                text-align: center;
+            }
+
+            .view-project-btn,
+            .contact-btn {
+                margin: 5px;
+                padding: 10px 20px;
+            }
+
+            /* Stats grid */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat-item h3 {
+                font-size: 36px;
+            }
+
+            /* Skills section */
+            .services {
+                min-height: auto;
+                padding: 60px 0;
+            }
+
+            .service-card {
+                padding: 0 20px;
+            }
+
+            .service-card h3 {
+                font-size: 22px;
+            }
+
+            /* About section */
+            .about {
+                min-height: auto;
+                padding: 60px 0;
+            }
+
+            .about-main h2 {
+                font-size: 28px;
+            }
+
+            /* Section titles */
+            .section-title {
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+
+            /* Projects grid */
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .project-card {
+                padding: 30px 25px;
+            }
+
+            .project-card h3 {
+                font-size: 22px;
+            }
+
+            /* Publications grid */
+            .publications-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .publication-card {
+                padding: 30px 25px;
+            }
+
+            .publication-card h3 {
+                font-size: 22px;
+            }
+
+            /* Contact section */
+            .contact-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .h4-email {
+                font-size: 1.3rem;
+            }
+
+            .a-email {
+                margin-left: 0;
+                font-size: 2rem;
+                height: 70px;
+                padding: 0 20px;
+            }
+
+            /* Footer */
+            .footer-links a {
+                margin: 0 8px;
+                font-size: 13px;
+            }
+
+            .footer-socials a {
+                margin: 0 6px;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Header */
+            header {
+                width: 95%;
+                padding: 10px 15px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            /* Hero section */
+            .hero-text h1 {
+                font-size: 28px;
+                line-height: 1.1;
+            }
+
+            .hero-text h2 {
+                font-size: 14px;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .view-project-btn,
+            .contact-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .social-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            /* Stats */
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 28px;
+            }
+
+            .stat-item p {
+                font-size: 12px;
+            }
+
+            /* Skills */
+            .service-card h3 {
+                font-size: 20px;
+            }
+
+            .service-card p span {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+
+            /* Section titles */
+            .section-title {
+                font-size: 26px;
+                margin-bottom: 30px;
+            }
+
+            /* Projects and publications */
+            .project-card,
+            .publication-card {
+                padding: 25px 20px;
+            }
+
+            .project-card h3,
+            .publication-card h3 {
+                font-size: 20px;
+            }
+
+            .project-card p,
+            .publication-card p {
+                font-size: 14px;
+            }
+
+            /* Contact */
+            .h4-email {
+                font-size: 1.1rem;
+            }
+
+            .a-email {
+                font-size: 1.5rem;
+                height: 60px;
+                padding: 0 15px;
+            }
+
+            .contact-item-1 p {
+                font-size: 14px;
+            }
+
+            /* Footer */
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .footer-links a {
+                margin: 5px;
+                font-size: 12px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .project-card,
+            .publication-card {
+                padding: 20px 15px;
+            }
+
+            .a-email {
+                font-size: 1.2rem;
+                height: 50px;
+            }
+
+            .stats-grid {
+                gap: 15px;
+            }
+
+            .stat-item h3 {
+                font-size: 24px;
             }
         }
     </style>
@@ -648,6 +952,9 @@
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
@@ -763,8 +1070,8 @@
                     <p>A proactive and passionate AI/ML developer with a proven track record of building end-to-end
                         solutions. My expertise in Retrieval-Augmented Generation (RAG) systems and generative models is
                         backed by hands-on experience developing tools like an autonomous web agent and a RAG-based
-                        YouTube Q&A system. I’ve contributed to the field through an IEEE publication and several
-                        technical blogs that simplify modern AI concepts. Committed to continuous learning, I’m eager to
+                        YouTube Q&A system. I've contributed to the field through an IEEE publication and several
+                        technical blogs that simplify modern AI concepts. Committed to continuous learning, I'm eager to
                         apply my skills toward building impactful, real-world applications.<br>
                         <br>My professional goal is to contribute to impactful AI applications that bridge research with
                         real-world value, while continuously growing into roles that allow me to innovate at the
@@ -898,7 +1205,6 @@
                             class="fa-regular fa-circle-right"></i></a>
                 </div>
 
-
                 <div class="publication-card">
                     <h3>Vector Databases and Semantic Search: A Complete Implementation Guide</h3>
                     <div class="publication-meta">
@@ -931,7 +1237,6 @@
         </div>
         </div>
     </section>
-
 
     <footer class="footer">
         <div class="container footer-content">
@@ -966,8 +1271,37 @@
     </footer>
 
     <script>
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle i');
+
+            navLinks.classList.toggle('active');
+
+            // Toggle hamburger/close icon
+            if (navLinks.classList.contains('active')) {
+                menuToggle.classList.remove('fa-bars');
+                menuToggle.classList.add('fa-times');
+            } else {
+                menuToggle.classList.remove('fa-times');
+                menuToggle.classList.add('fa-bars');
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.mobile-menu-toggle i');
+
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('fa-times');
+                menuToggle.classList.add('fa-bars');
+            });
+        });
+
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^=" #"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -1000,8 +1334,6 @@
         ).forEach(el => {
             observer.observe(el);
         });
-
-
     </script>
 </body>
 
