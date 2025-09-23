@@ -637,20 +637,53 @@
 
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgb(255, 255, 255);
-                border-radius: 15px;
-                margin-top: 10px;
+                position: fixed;
+                /* sits on top of the page, not just inside header */
+                top: 70px;
+                /* adjust this to match your header height */
+                left: 10px;
+                right: 10px;
+                z-index: 999;
+                /* above everything */
+
+                background: rgb(164, 164, 164);
+                /* semi-transparent */
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                padding: 25px;
                 flex-direction: column;
-                padding: 20px;
-                gap: 15px;
+                gap: 18px;
+
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+                /* frosted shadow */
+                animation: slideDown 0.3s ease-out;
+                /* smooth drop effect */
             }
 
+            .nav-links.active {
+                display: flex;
+            }
+
+            /* slide down animation */
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-15px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+
+
             .nav-links a {
-                color: #161616;
+                color: #000000;
                 font-size: 16px;
             }
 
@@ -702,7 +735,7 @@
                 font-size: 40px;
             }
 
-            .stat-item p{
+            .stat-item p {
                 font-size: 12px;
             }
 
@@ -870,11 +903,6 @@
             .section-title {
                 font-size: 26px;
                 margin-bottom: 30px;
-            }
-
-            /* about section */
-            .about-main p{
-
             }
 
             /* Projects and publications */
